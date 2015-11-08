@@ -1,16 +1,26 @@
 class BoardsController < ApplicationController
-  def index
-  end
-
+  before_action :all_boards, only: [:index, :create]
+  respond_to :html, :js
+  # def index
+  #   @boards = Board.all
+  #   respond_to do |format|
+  #     format.html
+  #     format.js
+  #   end
+  # end
   def new
     @board = Board.new
   end
 
   def create
-    @board = Board.new(board_params)
+    @board = Board.create(board_params)
   end
 
   private
+    def all_boards
+      @boards = Board.all
+    end
+    
     def board_params
       params.require(:board).permit(:title)
     end

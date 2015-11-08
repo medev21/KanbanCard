@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 ################### Added by Admin ##########################
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.5.1'
 gem 'simple_form', '~> 3.2'
+gem 'responders', '~> 2.1'
 #############################################################
 
 # Use ActiveModel has_secure_password

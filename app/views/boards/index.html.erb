@@ -1,1 +1,22 @@
-<h1>This is the index page</h1>
+<!-- <%= link_to 'New Board', new_board_path, remote: true %>
+<div id="task-form" style="display:none;"></div> -->
+
+<div class="row">
+  <div class="col-md-5 col-md-offset-1">
+    <h2>Boards</h2>
+  </div>
+
+  <div class="col-md-2 col-md-offset-4">
+    <%= link_to new_board_path, remote: true do %>
+      <button class="btn btn-default">New</button>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-2" id="task-form" style="display:none;"></div>
+</div>
+
+<div class="row">
+  <div class="col-md-7 col-md-offset-1" id="tasks"><%= render @boards %></div>
+</div>

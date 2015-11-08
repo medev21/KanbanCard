@@ -1,0 +1,4 @@
+<%= simple_form_for @board, remote: true do |f| %>
+  <%= f.input  :title, label: 'Board' %>
+  <%= f.button :submit %>
+<% end %>
