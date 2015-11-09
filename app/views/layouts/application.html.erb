@@ -17,6 +17,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Account", edit_user_registration_path %></li>
           <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
         </ul>
       <% else %>
         <ul class="nav navbar-nav navbar-right">
@@ -24,7 +25,7 @@
           <li><%= link_to "Sign In", new_user_session_path %></li>
         </ul>
       <% end %>
-      
+
     </div>
   </nav>
   <p class="notice"><%= notice %></p>
