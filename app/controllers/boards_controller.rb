@@ -24,6 +24,15 @@ class BoardsController < ApplicationController
 
   def update
     @board.update_attributes(board_params)
+    # @board.update(board_params)
+    # respond_with @board
+
+    # respond_to do |format|
+    #   if @user.update_attributes(board_params)
+    #     format.html { redirect_to(@board, :notice => 'User was successfully updated.') }
+    #     format.json { respond_with_bip(@board) }
+    #   end
+    # end
   end
 
   def destroy

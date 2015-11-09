@@ -29,6 +29,8 @@ gem 'simple_form', '~> 3.2'
 gem 'responders', '~> 2.1'
 gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'paperclip', '~> 4.3', '>= 4.3.1'
+# gem 'best_in_place', '~> 3.0', '>= 3.0.3'
+gem 'best_in_place', github: 'bernat/best_in_place'
 #############################################################
 
 # Use ActiveModel has_secure_password
