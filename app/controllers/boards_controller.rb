@@ -11,12 +11,12 @@ class BoardsController < ApplicationController
   # end
   def new
     # @board = Board.new
-    @board = current_user.boards.build
+    @board = current_user.boards.new
   end
 
   def create
     # @board = Board.create(board_params)
-    @board = current_user.boards.build(board_params)
+    @board = current_user.boards.create(board_params)
   end
 
   def show
