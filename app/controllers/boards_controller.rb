@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :all_boards, only: [:index, :create]
+  before_action :all_boards, only: [:index, :create, :update, :destroy]
   before_action :find_board, only: [:show, :edit, :update, :destroy]
   respond_to :html, :js
   # def index
@@ -18,6 +18,10 @@ class BoardsController < ApplicationController
   end
 
   def show
+  end
+
+  def update
+    @board.update_attributes(board_params)
   end
 
   private

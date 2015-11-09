@@ -1,2 +1,5 @@
 
 <p><%= link_to board.title, board %></p>
+<%= link_to edit_board_path(board), remote: true do %>
+    <button>Edit</button>
+<% end %>
