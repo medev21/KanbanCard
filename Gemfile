@@ -27,6 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.5.1'
 gem 'simple_form', '~> 3.2'
 gem 'responders', '~> 2.1'
+gem 'devise', '~> 3.5', '>= 3.5.2'
 #############################################################
 
 # Use ActiveModel has_secure_password
