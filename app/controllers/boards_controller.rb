@@ -24,9 +24,14 @@ class BoardsController < ApplicationController
     @board.update_attributes(board_params)
   end
 
+  def destroy
+    @board.destroy
+    redirect_to root_path
+  end
+
   private
     def all_boards
-      @boards = Board.all
+      @boards = Board.all.order('created_at DESC')
     end
 
     def board_params
