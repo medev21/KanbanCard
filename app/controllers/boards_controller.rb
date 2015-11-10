@@ -2,13 +2,7 @@ class BoardsController < ApplicationController
   before_action :all_boards, only: [:index, :create, :update, :destroy]
   before_action :find_board, only: [:show, :edit, :update, :destroy]
   respond_to :html, :js
-  # def index
-  #   @boards = Board.all
-  #   respond_to do |format|
-  #     format.html
-  #     format.js
-  #   end
-  # end
+  before_action :authenticate_user!
   def new
     # @board = Board.new
     @board = current_user.boards.new
@@ -24,20 +18,12 @@ class BoardsController < ApplicationController
 
   def update
     @board.update_attributes(board_params)
-    # @board.update(board_params)
-    # respond_with @board
 
-    # respond_to do |format|
-    #   if @user.update_attributes(board_params)
-    #     format.html { redirect_to(@board, :notice => 'User was successfully updated.') }
-    #     format.json { respond_with_bip(@board) }
-    #   end
-    # end
   end
 
   def destroy
     @board.destroy
-    # redirect_to root_path
+    redirect_to :back #refreshes the page
   end
 
   private

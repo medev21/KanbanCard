@@ -1,12 +1,5 @@
 
 <p><%= link_to board.title, board %></p>
 
-<%= link_to edit_board_path(board), remote: true do %>
-    <button>Edit</button>
-<% end %>
-
-<%= link_to board_path(board), remote: true, method: :delete, data: {confirm: 'Are you sure'} do %>
-    <button>Delete</button>
-<% end %>
-
-<!-- <p><%= best_in_place board, :title, :as => :input %></p> -->
+<%= link_to 'Edit', edit_board_path(board), remote: true, class: 'btn btn-default'%>
+<%= link_to 'Delete', board_path(board), method: :delete, data: {confirm: 'Are you sure'}, class: 'btn btn-default' %>
