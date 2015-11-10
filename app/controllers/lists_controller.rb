@@ -15,7 +15,7 @@ class ListsController < ApplicationController
 
   def update
     @list.update_attributes(list_params)
-    # respond_with @list
+    respond_with @list
   end
 
   private
