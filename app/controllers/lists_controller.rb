@@ -5,6 +5,8 @@ class ListsController < ApplicationController
 
   def create
     @list = @board.lists.create(list_params)
+    @list.user_id = current_user.id
+    redirect_to :back
   end
 
   def show
