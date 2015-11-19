@@ -18,6 +18,17 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+.row{
+  margin-bottom: 10px;
+}
+
+.boards{
+  margin-bottom: 10px;
+}
+
+.list-group-item{
+  background-color: #838C91;
+}
 //  body{
 //    font-family: 'Playfair Display', serif;
 //  }
