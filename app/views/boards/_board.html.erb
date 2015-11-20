@@ -1,13 +1,6 @@
-<div class="col-md-3 boards">
-  <!-- <div class="message">
-    <p class="message-title"><%= link_to board.title, board %></p>
-    <%= link_to 'Edit', edit_board_path(board), remote: true, class: 'btn btn-default'%>
-    <%= link_to 'Delete', board_path(board), method: :delete, data: {confirm: 'Are you sure'}, class: 'btn btn-default' %>
-  </div> -->
+<!-- <div class="col-md-3 boards">
   <div class="list-group-item">
-    <p class="message-title"><%= link_to board.title, board %></p>
-    <!-- <%= link_to 'Edit', edit_board_path(board), remote: true, class: 'btn btn-default'%> -->
-    <!-- <%= link_to 'Delete', board_path(board), method: :delete, data: {confirm: 'Are you sure'}, class: 'btn btn-default' %> -->
+    <p><%= link_to board.title, board %></p>
     <%= link_to edit_board_path(board), remote: true do %>
       <span class="glyphicon glyphicon-pencil"></span>
     <% end %>
@@ -15,4 +8,19 @@
       <span class="glyphicon glyphicon-remove"></span>
     <% end %>
   </div>
+</div> -->
+
+
+<div class="col-md-3 boards">
+  <%= link_to board do %>
+    <div class="list-group-item">
+      <p><%= board.title %></p>
+      <%= link_to edit_board_path(board), remote: true do %>
+        <span class="glyphicon glyphicon-pencil"></span>
+      <% end %>
+      <%= link_to board_path(board), method: :delete, data: {confirm: 'Are you sure'} do %>
+        <span class="glyphicon glyphicon-remove"></span>
+      <% end %>
+    </div>
+  <% end %>
 </div>
