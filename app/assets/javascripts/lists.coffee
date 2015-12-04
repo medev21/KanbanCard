@@ -3,7 +3,10 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
   $('.ListSort').sortable()
-  $('.card').draggable()
+  # $('.card').draggable()
+  $( ".card" ).draggable({
+  # containment: ".ListSort"
+  });
   console.log('set up draggable')
   $('#test').droppable({
     drop: () ->
@@ -11,17 +14,26 @@ jQuery ->
   });
   $('.cardsort').droppable({
     accept: '.card'
-    # activeClass: 'ui-state-hover'
-    # hoverClass: 'ui-state-active'
     drop: (event, ui) ->
       console.log('drop')
       droppable = $(this)
       draggable = ui.draggable
-      draggable.appendTo(droppable)
-      # draggable.css ->
-      #   top: '0px'
-      #   left: '0px'
+      # draggable.appendTo(droppable)
+      (draggable).detach().css({top: 0,left: 0}).appendTo(droppable)
       return
   })
-# jQuery ->
-  # $('.cardsort').dropable()
+
+  # $('.cardsort').droppable({
+  #   tolerance: '.card'
+  #   drop:(event, ui) ->
+  #     console.log('drop')
+  #     droppable = $(this).offset()
+  #     draggable = ui.draggable.offset()
+  #     left_end = droppable.left - draggable.left + 1
+  #     top_end = droppable.top - draggable.top + 1
+  #     ui.draggable.animate({
+  #       top: '+=' + top_end,
+  #       left: '+=' + left_end
+  #     })
+  #     return
+  # })
