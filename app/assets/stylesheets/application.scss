@@ -30,6 +30,9 @@
   background-color: #838C91;
 }
 
+.list-sortable{
+  margin-bottom: 15px;
+}
 
 .list{
   background-color: #E3E3E3;
@@ -45,6 +48,7 @@
   font-size: 15px;
   line-height: 18px;
   text-align: left;
+  height: 25px; //this prevents the best in place to offset the parent div
 }
 
 .list .card {
