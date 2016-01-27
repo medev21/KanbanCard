@@ -29,6 +29,39 @@
 .list-group-item{
   background-color: #838C91;
 }
+
+
+.list{
+  background-color: #E3E3E3;
+  border-radius: 3px;
+  margin: 5px 10px;
+  padding: 10px;
+  width: 260px;
+  float: left;
+}
+
+.list>header {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: left;
+}
+
+.list .card {
+  background-color: #FFF;
+  border-bottom: 1px solid #CCC;
+  margin: 10px 0;
+  padding: 6px 8px;
+  cursor: pointer;
+  /*cursor: move;*/
+}
+
+.ui-sortable-placeholder {
+    border: 3px dashed #aaa;
+    height: 177px;
+    width: 260px;
+    background: #ccc;
+}
 //  body{
 //    font-family: 'Playfair Display', serif;
 //  }
