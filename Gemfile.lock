@@ -1,11 +1,3 @@
-GIT
-  remote: git://github.com/bernat/best_in_place.git
-  revision: f6f108ecaba04d9990ceea03df00ca6006bb9b0f
-  specs:
-    best_in_place (3.0.3)
-      actionpack (>= 3.2)
-      railties (>= 3.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -49,6 +41,9 @@ GEM
       execjs
       json
     bcrypt (3.1.10)
+    best_in_place (3.1.0)
+      actionpack (>= 3.2)
+      railties (>= 3.2)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.5.1)
@@ -115,6 +110,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -194,7 +191,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  best_in_place!
+  best_in_place (~> 3.1)
   bootstrap-sass (~> 3.3, >= 3.3.5.1)
   byebug
   coffee-rails (~> 4.1.0)
@@ -204,7 +201,7 @@ DEPENDENCIES
   jquery-ui-rails (~> 5.0, >= 5.0.5)
   paperclip (~> 4.3, >= 4.3.1)
   pg
-  pry (~> 0.10.3)
+  pry-rails
   rails (= 4.2.4)
   rails_12factor
   responders (~> 2.1)
