@@ -1,3 +1,8 @@
-README
+#README
 
-A trello clone, work in progress....
+A trello clone using Ruby on Rails, Bootstrap, and jQuery
+
+See [Demo](https://kanbancard.herokuapp.com/)
+
+
+##work in progress....
