@@ -1,4 +1,6 @@
-<%= simple_form_for Board.new do |f| %>
-  <%= f.input  :title, label: 'Board' %>
-  <%= f.button :submit %>
-<% end %>
+<div class="col-md-3">
+  <%= simple_form_for Board.new do |f| %>
+    <%= f.input  :title, label: 'Board' %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
