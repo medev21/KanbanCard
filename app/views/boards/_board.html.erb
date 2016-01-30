@@ -1,7 +1,8 @@
 <div class="col-md-3 boards">
   <%= link_to board do %>
     <div class="list-group-item">
-      <p><%= board.title %></p>
+      <p><%= best_in_place board, :title, :html_attrs => { size: 15 } %></p>
+
       <%= link_to edit_board_path(board), remote: true do %>
         <span class="glyphicon glyphicon-pencil"></span>
       <% end %>

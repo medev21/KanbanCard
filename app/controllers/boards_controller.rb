@@ -28,7 +28,10 @@ class BoardsController < ApplicationController
 
   def update
     @board.update_attributes(board_params)
-    respond_with @board
+    # respond_with @board
+    # redirect_to :back
+    respond_with_bip(@board)
+
   end
 
   def destroy
