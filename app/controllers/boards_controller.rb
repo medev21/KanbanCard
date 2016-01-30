@@ -1,24 +1,34 @@
 class BoardsController < ApplicationController
-  before_action :all_boards, only: [:index, :create, :update, :destroy]
+  # before_action :all_boards, only: [:index, :create, :update, :destroy]
   before_action :find_board, only: [:show, :edit, :update, :destroy]
   respond_to :html, :js
   before_action :authenticate_user!
-  def new
-    # @board = Board.new
-    @board = current_user.boards.new
+
+  def index
+    @boards = Board.all.order('created_at DESC')
   end
+
+  # def new
+  #   # @board = Board.new
+  #   @board = current_user.boards.new
+  # end
 
   def create
     # @board = Board.create(board_params)
     @board = current_user.boards.create(board_params)
+    # @board.user_id = current_user.id
+    # redirect_to :back
   end
 
   def show
   end
 
+  def edit
+  end
+
   def update
     @board.update_attributes(board_params)
-
+    respond_with @board
   end
 
   def destroy
@@ -27,10 +37,6 @@ class BoardsController < ApplicationController
   end
 
   private
-    def all_boards
-      @boards = Board.all.order('created_at DESC')
-    end
-
     def board_params
       params.require(:board).permit(:title)
     end
