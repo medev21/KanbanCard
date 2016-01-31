@@ -17,7 +17,7 @@ class BoardsController < ApplicationController
     # @board = Board.create(board_params)
     @board = current_user.boards.create(board_params)
     # @board.user_id = current_user.id
-    # redirect_to :back
+    redirect_to :back
   end
 
   def show
