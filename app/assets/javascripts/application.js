@@ -26,7 +26,7 @@ $(document).ready(function() {
   // sortables
   // make div col-lg-10 a sortable, call class list-sortable
   $( ".list-sortable" ).sortable({
-    cancel: '.listA, .listB'  //exclude these classes from being sorted
+    cancel: '.listA, .listB, .list-form-grid'  //exclude these classes from being sorted
   }).disableSelection();
 
   ///////end of sortables////////////

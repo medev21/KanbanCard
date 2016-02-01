@@ -1,6 +1,9 @@
   <h2><%= @board.title %></h2>
 
-  <div class="row row-horizon list-sortable">
-        <%= render @board.lists %>
-        <%= render 'lists/form' %>
+  <div class="row">
+    <div class="row-horizon list-sortable">
+      <%= render @board.lists %>
+      <%= render 'lists/form' %>
+    </div>
+
   </div>
