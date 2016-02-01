@@ -40,7 +40,7 @@
   margin: 5px 10px;
   padding: 10px;
   width: 260px;
-  float: left;
+  // float: left;
 }
 
 .list>header {
@@ -111,26 +111,17 @@
      img { width: 100% }
  }
 
- // .list {
- // 	box-sizing: border-box;
- // 	background-color: #383838;
- // 	margin-bottom: 25px;
- // 	margin-right: 10px;
- // 	margin-left: 10px;
- // 	padding: 1.4em 1.4em;
- // 	height: 150px;
- // 	border-bottom: 4px solid #0a8fd5;
- //
- // 	.list-title {
- // 		font-size: 1.5em;
- // 		font-family: 'Muli', sans-serif;
- // 		font-weight: 300;
- // 		margin-top: 0;
- // 		color: white;
- // 		margin-bottom: 25px;
- // 	}
- //
- // 	.btn-custom {
- // 		margin-top: 20px;
- // 	}
- // }
+.board-title{
+  height: 25px;
+}
+
+//  .horizontal{
+//    width: 100%;
+//    overflow: auto;
+//  }
+//
+// .table{
+//   display: table;
+//   table-layout: fixed;
+//   width: 100%;
+// }

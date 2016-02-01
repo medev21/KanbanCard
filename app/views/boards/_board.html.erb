@@ -1,8 +1,8 @@
 <%= link_to board do %>
   <div class="col-md-3 boards">
-    
+
       <div class="list-group-item">
-        <p><%= best_in_place board, :title, :html_attrs => { size: 15 } %></p>
+        <p class="board-title"><%= best_in_place board, :title, :html_attrs => { size: 15 } %></p>
 
         <%= link_to board_path(board), method: :delete, data: {confirm: 'Are you sure'} do %>
           <span class="glyphicon glyphicon-remove"></span>
