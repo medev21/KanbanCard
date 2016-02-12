@@ -2,7 +2,9 @@
 
   <section class="list">
     <header><%= best_in_place [@board, list], :listTitle, :html_attrs => { size: 15 } %></header>
-
+    <%= link_to board_list_path(list.board, list), method: :delete, data: {confirm: 'Are you sure'} do %>
+      <span class="glyphicon glyphicon-remove"></span>
+    <% end %>
     <div class="listA listB">
       <article class="card">Learn Swift</article>
 

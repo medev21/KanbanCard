@@ -9,8 +9,10 @@ class ListsController < ApplicationController
     @list.user_id = current_user.id
     @list.save #need to save the id-> might need to add if statement
     # require 'byebug'; byebug
+    redirect_to @board
 
-    redirect_to :back
+    # redirect_to :back
+
   end
 
   def show
@@ -22,6 +24,13 @@ class ListsController < ApplicationController
   def update
     @list.update_attributes(list_params)
     respond_with_bip(@list)
+  end
+
+  def destroy
+    @list.destroy
+    # redirect_to :back
+    redirect_to @board
+
   end
 
   private
