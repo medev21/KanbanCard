@@ -19,7 +19,7 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function() {
+var do_on_load = function() {
   /* Activating Best In Place */
   jQuery(".best_in_place").best_in_place();
 
@@ -64,4 +64,6 @@ $(document).ready(function() {
         //
         }
   });
-});
+}
+$(document).ready(do_on_load)
+$(window).bind('page:change', do_on_load)
