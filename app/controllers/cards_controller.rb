@@ -1,11 +1,19 @@
 class CardsController < ApplicationController
+  before_action :find_board
+  before_action :find_list
+  before_action :find_cared, only: [:show, :edit, :update, :destroy]
 
   def create
     @card = @board.cards.create(card_params)
     @card.user_id = current_user.id
+    @card.list_id = @list.id
+
     @card.save
 
     redirect_to @board
+  end
+
+  def show
   end
 
   def update

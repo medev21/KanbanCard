@@ -5,17 +5,18 @@
     <%= link_to board_list_path(list.board, list), method: :delete, data: {confirm: 'Are you sure'} do %>
       <span class="glyphicon glyphicon-remove"></span>
     <% end %>
+    <%= list.id %>
     <div class="listA listB">
-      <!-- <article class="card">Learn Swift</article>
 
-      <article class="card">Work on drag and drop</article>
+      <% Card.where(list_id: list.id).each do |card| %>
+        <!-- <%= render 'cards/card', :locals => {:card => "test"} %> -->
+        <article class="card">
+          <%= card.title %>
+        </article>
+      <% end %>
 
-      <article class="card">Build online portfolio</article> -->
-
-      <%= render @board.cards%>
+      <!-- <%= render 'cards/card' %> -->
     </div>
-
-    <!-- <%= render 'cards/form' %> -->
 
   </section>
 </div>
