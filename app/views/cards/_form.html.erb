@@ -1,0 +1,6 @@
+<div class="list-form-grid">
+  <%= simple_form_for([@board, @board.cards.build]) do |f| %>
+    <%= f.input  :title, placeholder: 'Card', label: false %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
