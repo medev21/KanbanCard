@@ -10,6 +10,7 @@ class CardsController < ApplicationController
 
   def update
     @card.update_attributes(card_params)
+    @card.list_id = @list.id
     respond_with_bip(@card)
   end
 

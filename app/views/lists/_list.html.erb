@@ -6,14 +6,16 @@
       <span class="glyphicon glyphicon-remove"></span>
     <% end %>
     <div class="listA listB">
-      <article class="card">Learn Swift</article>
+      <!-- <article class="card">Learn Swift</article>
 
       <article class="card">Work on drag and drop</article>
 
-      <article class="card">Build online portfolio</article>
+      <article class="card">Build online portfolio</article> -->
+
+      <%= render @board.cards%>
     </div>
 
-    <%= render 'cards/form' %>
+    <!-- <%= render 'cards/form' %> -->
 
   </section>
 </div>
