@@ -1,7 +1,12 @@
 class CardsController < ApplicationController
   before_action :find_board
   before_action :find_list
-  before_action :find_cared, only: [:show, :edit, :update, :destroy]
+  before_action :find_card, only: [:show, :edit, :update, :destroy]
+
+  def new
+    require 'byebug'; byebug
+    @card = @list.cards(card_params)
+  end
 
   def create
     @card = @board.cards.create(card_params)
@@ -29,7 +34,7 @@ class CardsController < ApplicationController
 
   private
     def card_params
-      params.require(:card).permit(:title)
+      params.require(:card).permit(:title, :list_id, :user_id )
     end
 
     def find_board

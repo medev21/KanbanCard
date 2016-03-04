@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
 
   root 'boards#index'
+  # get '/boards/:board_id/lists/:list_id/cards/new' => 'cards#new', :as => :cards
 end

@@ -35,7 +35,7 @@ class ListsController < ApplicationController
 
   private
     def list_params
-      params.require(:list).permit(:listTitle)
+      params.require(:list).permit(:listTitle, :board_id, :user_id)
     end
 
     def find_board
