@@ -11,9 +11,6 @@ class CardsController < ApplicationController
   def create
     @card = current_user.cards.create(card_params)
     @card.user_id = current_user.id
-    # @card.list_id = @list.id
-
-
 
     @card.save
 

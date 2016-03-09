@@ -5,7 +5,6 @@
     <%= link_to board_list_path(list.board, list), method: :delete, data: {confirm: 'Are you sure'} do %>
       <span class="glyphicon glyphicon-remove"></span>
     <% end %>
-    <%= list.id %>
     <div class="listA listB">
 
       <% Card.where(list_id: list.id).each do |card| %>
@@ -14,14 +13,6 @@
           <%= card.title %>
         </article>
 
-        <% if card.list_id == nil %>
-          <% card.list_id = list.id %>
-
-          <article class="card">
-            <%= card.title %>
-          </article>
-
-        <% end %>
       <% end %>
 
     </div>
