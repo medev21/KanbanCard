@@ -13,11 +13,29 @@
         <article class="card">
           <%= card.title %>
         </article>
+
+        <% if card.list_id == nil %>
+          <% card.list_id = list.id %>
+
+          <article class="card">
+            <%= card.title %>
+          </article>
+
+        <% end %>
       <% end %>
 
     </div>
-    <!-- <%= render 'cards/form' %> -->
-  
+    <%= render 'cards/form', :id => list.id %>
+
 
   </section>
 </div>
+
+<script type="text/javascript">
+  var board_id = <%= @board.id %>; // for integer
+  var board_name = "<%= @board.title %>"; // for string
+
+  window.abc = function(board_id, board_name){
+    do_on_load();
+  };// this is your function in .js file
+</script>

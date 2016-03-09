@@ -57,11 +57,14 @@ var do_on_load = function() {
     cursor: "move",
     items: ".card",
     drop: function (event, ui) {
-
+      console.log('hi');
     },
     stop: function (event, ui) {
         var $obj = $(ui.item);
-        //
+        function abc(id, name){
+          console.log(id);
+        }
+
         }
   });
 }
