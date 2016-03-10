@@ -1,8 +1,8 @@
 
 <div class="list-form-grid">
-<%= simple_form_for ([@board, @board.cards.build]) do |f| %>
-<%= f.input :title, placeholder: 'Card', label: false %>
-<%= f.input :list_id, :as => :hidden, input_html: {value: id}, label: false  %>
-<%= f.button :submit %>
+<%= simple_form_for([@board, @board.cards.build]) do |f| %>
+  <%= f.input :title, placeholder: 'Card', label: false %>
+  <%= f.input :list_id, :as => :hidden, input_html: {value: id}, label: false  %>
+  <%= f.button :submit %>
 <% end %>
 </div>
