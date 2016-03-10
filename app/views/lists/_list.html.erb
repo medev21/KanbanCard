@@ -7,10 +7,10 @@
     <% end %>
     <div class="listA listB">
 
-      <% Card.where(list_id: list.id).each do |card| %>
+      <% Card.where(list_id: list.id).each do |tarjeta| %>
         <!-- <%= render 'cards/card', :locals => {:card => "test"} %> -->
         <article class="card">
-          <%= card.title %>
+          <%= tarjeta.title %>
         </article>
 
       <% end %>

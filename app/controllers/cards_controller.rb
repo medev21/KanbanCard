@@ -14,7 +14,7 @@ class CardsController < ApplicationController
 
     @card.save
 
-    redirect_to :back
+    redirect_to @board
   end
 
   def show
