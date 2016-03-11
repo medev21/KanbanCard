@@ -33,9 +33,23 @@ class ListsController < ApplicationController
 
   end
 
+  def sort
+    # @board.lists.each_with_index do |list, index|
+    #   list.update_attributes(position_id: index+1)
+    #
+    # end
+
+    params[:list].each_with_index do |id, index|
+      List.find(id).update_attribute(:position_id, index+1)
+    end
+
+    render nothing: true
+
+  end
+
   private
     def list_params
-      params.require(:list).permit(:listTitle, :board_id, :user_id)
+      params.require(:list).permit(:listTitle, :board_id, :user_id, :position_id)
     end
 
     def find_board

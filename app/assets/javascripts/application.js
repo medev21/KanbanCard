@@ -26,7 +26,10 @@ var do_on_load = function() {
   // sortables
   // make div col-lg-10 a sortable, call class list-sortable
   $( ".list-sortable" ).sortable({
-    cancel: '.listA, .listB, .list-form-grid'  //exclude these classes from being sorted
+    cancel: '.listA, .listB, .list-form-grid',  //exclude these classes from being sorted
+    update: function(event, ui) { //this will call that data-update-url and will call sort action
+      $.post($(this).data('update-url'), $(this).sortable('serialize'));
+    }
   }).disableSelection();
 
   ///////end of sortables////////////
