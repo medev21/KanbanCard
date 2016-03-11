@@ -22,7 +22,9 @@ Rails.application.routes.draw do
   # end
 
   resources :boards do
-    resources :lists
+    resources :lists do
+      collection { post :sort } #post is the request eg.get
+    end
     resources :cards do
       patch 'change_list_id', on: :member
     end

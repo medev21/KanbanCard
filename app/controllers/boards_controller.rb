@@ -21,6 +21,7 @@ class BoardsController < ApplicationController
   end
 
   def show
+    @sorted = @board.lists.order("position_id")
   end
 
   def edit

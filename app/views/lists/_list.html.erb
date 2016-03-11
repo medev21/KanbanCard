@@ -1,4 +1,4 @@
-<div class="col-lg-3">
+<div id="list_<%= list.id %>"class="col-lg-3">
 
   <section class="list">
     <header><%= best_in_place [@board, list], :listTitle, :html_attrs => { size: 15 } %></header>
@@ -13,20 +13,12 @@
           <%= card.title %>
         </article>
 
+
       <% end %>
 
     </div>
     <%= render 'cards/form', :id => list.id %>
 
-
   </section>
+
 </div>
-
-<script type="text/javascript">
-  var board_id = <%= @board.id %>; // for integer
-  var board_name = "<%= @board.title %>"; // for string
-
-  window.abc = function(board_id, board_name){
-    do_on_load();
-  };// this is your function in .js file
-</script>
