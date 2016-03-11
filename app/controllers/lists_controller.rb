@@ -34,11 +34,7 @@ class ListsController < ApplicationController
   end
 
   def sort
-    # @board.lists.each_with_index do |list, index|
-    #   list.update_attributes(position_id: index+1)
-    #
-    # end
-
+    
     params[:list].each_with_index do |id, index|
       List.find(id).update_attribute(:position_id, index+1)
     end

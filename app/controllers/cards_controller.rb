@@ -1,12 +1,6 @@
 class CardsController < ApplicationController
   before_action :find_board
-  # before_action :find_list
   before_action :find_card, only: [:show, :edit, :update, :destroy]
-
-  # def new
-  #
-  #   @card = @list.cards.build
-  # end
 
   def create
     @card = current_user.cards.create(card_params)
@@ -50,12 +44,6 @@ class CardsController < ApplicationController
     def find_board
       @board = Board.find(params[:board_id])
     end
-    #
-    #
-    # def find_list
-    #   @board = Board.find(params[:board_id])
-    #   @list = @board.lists.where
-    # end
 
     def find_card
       @card = Card.find(params[:id])
