@@ -7,12 +7,13 @@
     <% end %>
     <div class="listA listB">
 
-      <% Card.where(list_id: list.id).each do |tarjeta| %>
-        <!-- <%= render 'cards/card', :locals => {:card => "test"} %> -->
+      <% Card.where(list_id: list.id).each do |card| %>
         <article class="card">
-          <%= tarjeta.title %>
+          <%= card.title %>
+          <%= link_to board_card_path(@board, card.id), method: :delete, data: {confirm: 'Are you sure'} do %>
+            <span class="glyphicon glyphicon-remove"></span>
+          <% end %>
         </article>
-
 
       <% end %>
 
