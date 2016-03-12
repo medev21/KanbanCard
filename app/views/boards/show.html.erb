@@ -1,4 +1,4 @@
-  <h2><%= @board.title %></h2>
+  <h2><%= best_in_place @board, :title, :html_attrs => { size: 15 } %></h2>
 
   <div class="row">
     <div class="row-horizon list-sortable" data-update-url="<%= sort_board_lists_url(@board)%>">
