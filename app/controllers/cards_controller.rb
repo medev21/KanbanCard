@@ -21,10 +21,12 @@ class CardsController < ApplicationController
   end
 
   def change_list_id
-    @id = params[:listId]
+    # this updates the card list id and position
+    @id = params[:listId] #this grabs the variable listId from the url in the view data-update-url
 
     params[:card].each_with_index do |id, index|
       Card.find(id).update_attribute(:list_id, @id)
+      Card.find(id).update_attribute(:position, index + 1)
     end
 
     render nothing: true
