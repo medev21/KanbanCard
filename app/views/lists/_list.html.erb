@@ -5,10 +5,10 @@
     <%= link_to board_list_path(list.board, list), method: :delete, data: {confirm: 'Are you sure'} do %>
       <span class="glyphicon glyphicon-remove"></span>
     <% end %>
-    <div class="listA listB">
+    <div class="listA listB" data-update-url="<%= change_list_id_board_cards_url(@board, :listId => list.id)%>">
 
       <% Card.where(list_id: list.id).each do |card| %>
-        <article class="card">
+        <article class="card" id="card_<%= card.id %>">
           <%= card.title %>
           <%= link_to board_card_path(@board, card.id), method: :delete, data: {confirm: 'Are you sure'} do %>
             <span class="glyphicon glyphicon-remove"></span>

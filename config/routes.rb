@@ -26,7 +26,8 @@ Rails.application.routes.draw do
       collection { post :sort } #post is the request eg.get
     end
     resources :cards do
-      patch 'change_list_id', on: :member
+      # patch 'change_list_id', on: :member
+      collection { post :change_list_id }
     end
   end
 

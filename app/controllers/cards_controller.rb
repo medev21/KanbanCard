@@ -21,14 +21,13 @@ class CardsController < ApplicationController
   end
 
   def change_list_id
+    @id = params[:listId]
 
-    @card.list_id = @list.id
-
-    if @card.save
-      render json: @card , status: 200
-    else
-      render json: @card , status: 404
+    params[:card].each_with_index do |id, index|
+      Card.find(id).update_attribute(:list_id, @id)
     end
+
+    render nothing: true
   end
 
   def destroy

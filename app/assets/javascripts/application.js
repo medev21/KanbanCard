@@ -49,8 +49,13 @@ var do_on_load = function() {
           'width': $('.card').width(),
         });
         ui.placeholder.height(ui.item.height()); //placeholder full height
+        console.log("i'm being picked");
+        // $.post($(this).data('update-url'), $(this).sortable('serialize'));
+
     },
-    stop: function (event, ui) {}
+    stop: function (event, ui) {
+
+    }
   });
 
   $(".listB").sortable({
@@ -60,15 +65,15 @@ var do_on_load = function() {
     cursor: "move",
     items: ".card",
     drop: function (event, ui) {
-      console.log('hi');
+      console.log('test');
+
     },
     stop: function (event, ui) {
-        var $obj = $(ui.item);
-        function abc(id, name){
-          console.log(id);
-        }
-
-        }
+        console.log('dropped');
+      },
+    update: function(event, ui) { //this will call that data-update-url and will call sort action
+      $.post($(this).data('update-url'), $(this).sortable('serialize'));
+    }
   });
 }
 $(document).ready(do_on_load)
