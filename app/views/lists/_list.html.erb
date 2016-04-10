@@ -1,10 +1,17 @@
 <div id="list_<%= list.id %>"class="col-lg-3">
 
   <section class="list">
-    <header><%= best_in_place [@board, list], :listTitle, :html_attrs => { size: 15 } %></header>
-    <%= link_to board_list_path(list.board, list), method: :delete, data: {confirm: 'Are you sure'} do %>
-      <span class="glyphicon glyphicon-remove"></span>
-    <% end %>
+
+    <div class="row" style="margin: 0;">
+      <div class="col-sm-12" style="padding: 0; margin-bottom: 10px;">
+        <header style="float: left;"><%= best_in_place [@board, list], :listTitle, :html_attrs => { size: 15 } %></header>
+        <%= link_to board_list_path(list.board, list), method: :delete, data: {confirm: 'Are you sure'} do %>
+          <span class="glyphicon glyphicon-remove"></span>
+        <% end %>
+      </div>
+
+    </div>
+
     <div class="listA listB" style="min-height: 10px;" data-update-url="<%= change_list_id_board_cards_url(@board, :listId => list.id)%>">
 
       <% Card.where(list_id: list.id).order("position ASC").each do |card| %>
