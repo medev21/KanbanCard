@@ -3,9 +3,9 @@
   <section class="list">
 
     <div class="row" style="margin: 0;">
-      <div class="col-sm-12" style="padding: 0; margin-bottom: 10px;">
-        <header style="float: left;"><%= best_in_place [@board, list], :listTitle, :html_attrs => { size: 15 } %></header>
-        <%= link_to board_list_path(list.board, list), method: :delete, style: "float: right; padding-right: 10px;", data: {confirm: 'Are you sure'} do %>
+      <div class="col-sm-12 header-tab" style="padding: 0; margin-bottom: 10px;">
+        <header><%= best_in_place [@board, list], :listTitle, :html_attrs => { size: 15 } %></header>
+        <%= link_to board_list_path(list.board, list), method: :delete, data: {confirm: 'Are you sure'} do %>
           <span class="glyphicon glyphicon-remove"></span>
         <% end %>
       </div>
@@ -16,7 +16,9 @@
 
       <% Card.where(list_id: list.id).order("position ASC").each do |card| %>
         <article class="card" id="card_<%= card.id %>">
-          <%= best_in_place [@board, card], :title, :html_attrs => { size: 15 } %>
+          <div class="card-title">
+            <%= best_in_place [@board, card], :title, :html_attrs => { size: 15 } %>
+          </div>
           <%= link_to board_card_path(@board, card.id), method: :delete, data: {confirm: 'Are you sure'} do %>
             <span class="glyphicon glyphicon-remove"></span>
           <% end %>
