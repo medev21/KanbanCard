@@ -22,6 +22,10 @@ body, html{
   height: 100%;
 }
 
+a, a:hover, a:focus{ color: #000; text-decoration: none;}
+
+p{margin: 0;}
+
 .container{
   height: 80%;
 }
@@ -41,6 +45,7 @@ body, html{
 
 .list-group-item{
   background-color: #838C91;
+  height: 80px;
 }
 
 .list-sortable{
@@ -98,8 +103,15 @@ body, html{
 
 .board-title{
   height: 25px;
+  float: left;
+  min-width: 150px;
 }
 
+.list-group-item a:nth-child(2){
+  float: right;
+  visibility: hidden;
+}
+.list-group-item:hover a:nth-child(2){ visibility: visible;}
 // .row-horizon{
 //   height: 100%;
 // }
