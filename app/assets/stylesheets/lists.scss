@@ -17,9 +17,15 @@
 .card{
   .card-title{
     float: left;
-    margin-right: 100px;
   }
 
+  a{float: right;}
+
 }
+
+section.list div.row div.header-tab a, .listA.listB article.card a{visibility: hidden;}
+
+section.list div.row:hover div.header-tab a, .listA.listB:hover article.card a{visibility: visible;}
+
 
 //////////////////////
